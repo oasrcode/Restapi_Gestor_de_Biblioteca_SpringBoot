@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    
+  <div class="sidebar">
+      <a href="index.html">Inicio</a>
+      <a class="active" href="Libros.html">Libros</a>
+      <a href="Usuarios.html">Usuarios</a>
+    <a href="Prestamos.html">Prestamos</a>
+    <a href="Ejemplares.html">Ejemplares</a>
+      
+    </div>
+    
+>
+    <div id="cabecera" class="content">
+      <h1>Libros</h1>
+      <!--CRUD-->
+      <div class="container">
+        <!--Pestañas-->
+        <div class="mx-auto col-sm-12 main-section">
+          <ul class="nav nav-tabs justify-content-end">
+            <li class="nav-item">
+              <a class="nav-link active" id="list-tab" data-toggle="tab" href="#list"  aria-controls="list" aria-selected="false">Mostrar</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="form-tab" data-toggle="tab" href="#form"  aria-controls="form" aria-selected="true">Añadir</a>
+            </li>
+          </ul>
+          <!--Tarjetas-->
+          <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="list"  aria-labelledby="list-tab">
+              <div class="card">
+                <div class="card-header">
+                  <div class="input-group">
+                    <input id="bucador_isbn" type="search" class="form-control rounded" placeholder="ISBN del libro" aria-label="Search" aria-describedby="search-addon" />
+                    <button type="button" class="btn btn-outline-primary" onclick="buscarLibroISBN()">Buscar</button>
+                  </div>
+                  <div class="input-group">
+                    <input id="bucador_title" type="search" class="form-control rounded"  placeholder="Titulo del libro" aria-label="Search" aria-describedby="search-addon" />
+                    <button type="button" class="btn btn-outline-primary" onclick="buscarLibroTitulo()">Buscar</button>
+                  </div>
+                </div>
+                <div class="card-body">
+                  <!--Tabla-->
+                  <div class="table-responsive">
+                    <table id="userList" class="table table-bordered table-hover table-striped">
+                      <thead class="thead-light">
+                      <tr>
+                        <th hidden scope="col">ID</th>
+                        <th scope="col">Título</th>
+                        <th scope="col">Autor</th>
+                        <th scope="col">Género</th>
+                        <th scope="col">Editorial</th>
+                        <th scope="col">ISBN</th>
+                        <th>Acciones</th>
+                      </tr>
+                      </thead>
+                      <tbody id="tbody">
+                      <tr>
+                      </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="tab-pane fade" id="form"  aria-labelledby="form-tab">
+              <!--Formulario-->
+              <div class="card">
+                <div class="card-header">
+                  <h4>Información del libro</h4>
+                </div>
+                <div class="card-body">
+                  <form class="form" autocomplete="off">
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">ISBN</label>
+                      <div class="col-lg-9">
+                        <input id="txt_create_ISBN" class="form-control" type="text"  placeholder="13 Dígitos sin ' - '">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Título</label>
+                      <div class="col-lg-9">
+                        <input id="txt_create_titulo" class="form-control" type="text" >
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Autor</label>
+                      <div class="col-lg-9">
+                        <input id="txt_create_autor" class="form-control" type="text">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Género</label>
+                      <div class="col-lg-9">
+                        <input id="txt_create_genero" class="form-control" type="email">
+                      </div>
+                    </div>
+                    <div class="form-group row">
+                      <label class="col-lg-3 col-form-label form-control-label">Editorial</label>
+                      <div class="col-lg-9">
+                        <input id="txt_create_editorial" class="form-control" type="text">
+                      </div>
+                    </div>
+
+                    <div class="form-group row">
+                      <div class="col-lg-12 text-center">
+                        <input type="reset" class="btn btn-secondary" value="Cancelar">
+                        <input type="button" class="btn btn-primary" value="Crear libro" onclick="crearLibro()">
+                      </div>
+                    </div>
+                  </form>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  <script src="js/libros.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</body>
+</html>
