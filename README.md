@@ -8,11 +8,12 @@ La aplicación gestionar una biblioteca, tratando con usuarios libros ,ejemplare
 ## Technologies
 ***
 El proyecto esta realizado en:
-* [Spring](https://spring.io/))
+* [Spring](https://spring.io/)
 * [Mysql](https://www.mysql.com/)
 * [HTML5]
 * [CSS.Bootsrap](https://getbootstrap.com/)
 * [JavaScript]
+
 
 ## Programas necesarios
 
