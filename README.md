@@ -32,15 +32,6 @@ Comando para clonar:
 cd existing_folder
 git clone [LINK DEL REPOSITORIO]
 
-```
-## Instalar node_module del backend
-
-En la carpeta del backend escribimos por terminal
-
-```bash
-npm install
-
-```
 ## Documentación
 
 Enlace a la documentación de la aplicación *[link](https://github.com/oasrcode/Restapi_Gestor_de_Biblioteca_SpringBoot/blob/master/Documentacion.pdf)
