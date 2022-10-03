@@ -40,3 +40,6 @@ En la carpeta del backend escribimos por terminal
 npm install
 
 ```
+## Documentación
+
+Enlace a la documentación de la aplicación [link] (https://github.com/oasrcode/Restapi_Gestor_de_Biblioteca_SpringBoot/blob/master/Documentacion.pdf)
